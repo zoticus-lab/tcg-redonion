@@ -13,7 +13,7 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_card;
+    private Long id_kartu;
 
     private String nama;
     private BigDecimal harga;
@@ -29,11 +29,11 @@ public class Card {
     // Getter dan Setter semua field
 
     public Long getId_card() {
-        return id_card;
+        return id_kartu;
     }
 
     public void setId_card(Long id_card) {
-        this.id_card = id_card;
+        this.id_kartu = id_card;
     }
 
     public String getNama() {
