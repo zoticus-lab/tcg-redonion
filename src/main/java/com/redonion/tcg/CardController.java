@@ -1,6 +1,5 @@
 package com.redonion.tcg;
 
-import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -44,9 +43,7 @@ public class CardController {
             }
 
             // Simpan gambar ke folder uploads/images/
-            String uploadDir = "uploads/images/";
-            File dir = new File(uploadDir);
-            if (!dir.exists()) dir.mkdirs();
+            String uploadDir = "src/main/resources/static/textures";
 
             String fileName = gambar.getOriginalFilename();
 

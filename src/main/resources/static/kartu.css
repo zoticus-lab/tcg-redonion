@@ -246,4 +246,21 @@ body {
   color: #ff48bb;
 }
 
- 
+ /* Atur ukuran dan layout kotak kartu supaya rapih dan seragam */
+.card {
+  width: 250px;        /* Lebar tetap */
+  height: 450px;       /* Tinggi tetap */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.card img {
+  width: 100%;
+  height: 350px;       /* tinggi gambar seragam */
+  object-fit: cover;   /* agar gambar tidak meleset */
+  border-radius: 8px;
+}

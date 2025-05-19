@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pokémon Marketplace</title>
-  <link rel="stylesheet" href="/landing.css" />
+  <link rel="stylesheet" href="/kartu.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
       <th:block th:each="card : ${cards}">
         <div class="card">
-          <img th:src="@{'uploads' + ${card.gambar}}" th:alt="${card.nama}" width="250" height="350">
+          <img th:src="@{'/textures/' + ${card.gambar}}" th:alt="${card.nama}" width="250" height="350">
           <h4 th:text="${card.nama}">Nama Kartu</h4>
           <p th:text="'Rp' + ${#numbers.formatDecimal(card.harga, 0, 'COMMA', 2, 'POINT')}">Harga</p>
           <button class="cta-button">Lihat Detail</button>
