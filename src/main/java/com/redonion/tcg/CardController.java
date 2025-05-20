@@ -78,10 +78,22 @@ public String showForm() {
 }
 
 
-@GetMapping("/list")
-public String listCards(Model model) {
+@GetMapping("/pokemon")
+public String showPokemonCards(Model model) {
     model.addAttribute("cards", cardRepository.findAll());
     return "pokemon";
+}
+
+@GetMapping("/yugioh")
+public String showYugiohCards(Model model) {
+    model.addAttribute("cards", cardRepository.findAll());
+    return "yugioh";
+}
+
+@GetMapping("/mtg")
+public String showMtgCards(Model model) {
+    model.addAttribute("cards", cardRepository.findAll());
+    return "mtg";
 }
 
 
