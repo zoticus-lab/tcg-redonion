@@ -295,19 +295,15 @@ body {
   margin-bottom: 6px;
 }
 
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a img {
+.social-icons svg {
   width: 24px;
-  margin-right: 10px;
-  vertical-align: middle;
-  transition: opacity 0.3s;
+  height: 24px;
+  color: var(--white); /* <-- ensures SVGs are white */
+  transition: color 0.3s ease;
 }
 
-.social-icons a img:hover {
-  opacity: 0.75;
+.social-icons a:hover svg {
+  color: var(--accent); /* Optional hover color */
 }
 
 /* Footer Bottom */
