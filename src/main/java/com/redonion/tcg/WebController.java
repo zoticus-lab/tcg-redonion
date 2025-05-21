@@ -9,4 +9,9 @@ public class WebController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/sign")
+    public String sign() {
+        return "sign";
+    }
 }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Halaman Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header>
+  <h1>Panel Admin</h1>
+  <p>Kelola pengguna, penawaran, dan pantau aktivitas situs</p>
+</header>
+
+<nav>
+  <a href="#pengguna">Pengguna</a>
+  <a href="#inventaris">Inventaris Pengguna</a>
+  <a href="#penawaran">Penawaran</a>
+  <a href="#analitik">Analitik</a>
+</nav>
+
+<main>
+
+  <!-- Manajemen Pengguna -->
+  <section id="pengguna">
+    <h2>Manajemen Pengguna</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Pengguna</th>
+          <th>Email</th>
+          <th>Nama Pengguna</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>user1@email.com</td>
+          <td>CardHunter</td>
+          <td><button>Edit</button> <button>Hapus</button></td>
+        </tr>
+        <!-- Data pengguna lainnya -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Inventaris Pengguna -->
+  <section id="inventaris">
+    <h2>Inventaris & Mata Uang</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Pengguna</th>
+          <th>Mata Uang</th>
+          <th>Jumlah Kartu</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CardHunter</td>
+          <td>850</td>
+          <td>12</td>
+          <td><button>Lihat</button></td>
+        </tr>
+        <!-- Data lainnya -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Penawaran -->
+  <section id="penawaran">
+    <h2>Penawaran Pengguna</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Penawaran</th>
+          <th>Dari</th>
+          <th>Kepada</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#PK001</td>
+          <td>CardHunter</td>
+          <td>DarkSlayer</td>
+          <td>Menunggu</td>
+          <td><button>Setujui</button> <button>Tolak</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Analitik -->
+  <section id="analitik">
+    <h2>Analitik & Tren</h2>
+    <p><strong>Kartu paling populer hari ini:</strong> Dragon Slayer X</p>
+    <p><strong>Pengguna aktif:</strong> 245</p>
+    <p><strong>Total transaksi hari ini:</strong> 320</p>
+    <!-- Tambahkan chart jika ada JS backend -->
+  </section>
+
+</main>
+
+</body>
+</html>

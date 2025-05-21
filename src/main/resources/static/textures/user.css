@@ -1,0 +1,243 @@
+/* Navbar */
+.navbar {
+  background-color: #2A4759;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #f2f6fa;
+}
+
+/* Header User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info .currency {
+  font-weight: bold;
+  color: #2A4759;
+  background: #f2f6fa;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.user-info .username {
+  font-weight: 600;
+  color: #233a47;
+  font-size: 1rem;
+}
+
+.user-info .profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2A4759;
+}
+
+.user-info .cta-button {
+  background: #2A4759;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  margin-left: 0.5rem;
+}
+
+.user-info .cta-button:hover {
+  background: #233a47;
+}
+
+/* Accordion */
+.accordion-section {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  background: #fff;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.accordion-header {
+  background: #2A4759;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: #233a47;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s;
+}
+
+.accordion-section.active .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+  padding: 0 1.5rem;
+}
+
+.accordion-section.active .accordion-content {
+  padding: 1.5rem;
+  max-height: 1000px;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.accordion-section:not(.active) .accordion-content {
+  padding: 0 1.5rem;
+}
+
+/* Card Grid (Inventaris) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid .card {
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card-grid .card:hover {
+  box-shadow: 0 6px 18px rgba(42,71,89,0.13);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.card-grid .card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.card-grid .card h4 {
+  color: #2A4759;
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Offers */
+.offers-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sent-offers, .received-offers {
+  flex: 1 1 250px;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.sent-offers h3, .received-offers h3 {
+  color: #2A4759;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Chat */
+.chat-container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Market */
+#market {
+  margin-bottom: 2rem;
+}
+
+#market h2 {
+  color: #2A4759;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+#market input[type="text"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #2A4759;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .user-info { flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+  .accordion-header { font-size: 1rem; padding: 1rem; }
+  .accordion-content { padding: 0 1rem; }
+  .accordion-section.active .accordion-content { padding: 1rem; }
+  .offers-container { flex-direction: column; gap: 1rem; }
+  .card-grid, .market-grid { grid-template-columns: 1fr; }
+}
