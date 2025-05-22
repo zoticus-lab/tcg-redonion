@@ -1,6 +1,5 @@
 package com.redonion.tcg.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,32 +9,30 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
-    private Long idUser;
+    private Integer id_user;
 
-    private String username;
+    private String nama;
     private String email;
     private String password;
+    private String role;
 
-    // Getter & Setter
-
-    public Long getIdUser() {
-        return idUser;
+    // Getter dan Setter
+    public Integer getId_user() {
+        return id_user;
     }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
+    public void setId_user(Integer id_user) {
+        this.id_user = id_user;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNama() {
+        return nama;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getEmail() {
@@ -52,5 +49,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
