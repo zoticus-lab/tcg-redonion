@@ -10,7 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #DDDDDD;
+  background: #fff0f6;
   padding: 50px 30px;
 }
 
@@ -29,7 +29,7 @@ body {
   width: 100%;
   background: #fff;
   padding: 40px 30px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(255, 72, 187, 0.15);
   perspective: 2700px;
   min-height: 500px;
   overflow: visible;
@@ -93,7 +93,7 @@ body {
   position: relative;
   font-size: 24px;
   font-weight: 500;
-  color: #333;
+  color: #ff485f;
   margin-bottom: 20px;
 }
 
@@ -104,7 +104,7 @@ body {
   bottom: 0;
   height: 3px;
   width: 25px;
-  background: #2A4759;
+  background: #ff48bb;
 }
 
 .forms .form-content .input-boxes {
@@ -127,7 +127,7 @@ body {
   padding: 0 35px;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #ff48bb;
   transition: all 0.3s ease;
   background: transparent;
   color: #333;
@@ -140,13 +140,13 @@ body {
 .form-content .input-box i {
   position: absolute;
   left: 10px;
-  color: #2A4759;
+  color: #ff48bb;
   font-size: 17px;
 }
 
 .form-content .input-box input:focus,
 .form-content .input-box input:valid {
-  border-color: #2A4759;
+  border-color: #ff485f;
 }
 .forms .form-content .text {
   font-size: 14px;
@@ -156,11 +156,12 @@ body {
 
 .forms .form-content .text a {
   text-decoration: none;
-  color: #2A4759;
+  color: #ff48bb;
 }
 
 .forms .form-content .text a:hover {
   text-decoration: underline;
+  color: #ff485f;
 }
 
 .forms .form-content .button {
@@ -170,7 +171,7 @@ body {
 
 .forms .form-content .button input {
   color: #fff;
-  background: #2A4759;
+  background: #ff48bb;
   border-radius: 6px;
   padding: 0 15px;
   height: 100%;
@@ -180,16 +181,17 @@ body {
 }
 
 .forms .form-content .button input:hover {
-  background: #1e3540;
+  background: #ff485f;
 }
 
 .forms .form-content label {
-  color: #2A4759;
+  color: #ff48bb;
   cursor: pointer;
 }
 
 .forms .form-content label:hover {
   text-decoration: underline;
+  color: #ff485f;
 }
 
 .forms .form-content .login-text,

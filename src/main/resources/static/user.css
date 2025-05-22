@@ -1,6 +1,6 @@
 /* Navbar */
 .navbar {
-  background-color: #2A4759;
+  background-color: #ff485f;
   padding: 1rem 0;
   color: #fff;
 }
@@ -34,7 +34,7 @@
 }
 
 .nav-links a:hover {
-  color: #f2f6fa;
+  color: #ff48bb;
 }
 
 /* Header User Info */
@@ -46,8 +46,8 @@
 
 .user-info .currency {
   font-weight: bold;
-  color: #2A4759;
-  background: #f2f6fa;
+  color: #ff485f;
+  background: #ffd1de;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 1rem;
@@ -55,7 +55,7 @@
 
 .user-info .username {
   font-weight: 600;
-  color: #233a47;
+  color: #ff48bb;
   font-size: 1rem;
 }
 
@@ -64,11 +64,11 @@
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #2A4759;
+  border: 2px solid #ff485f;
 }
 
 .user-info .cta-button {
-  background: #2A4759;
+  background: #ff48bb;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -83,7 +83,7 @@
 }
 
 .user-info .cta-button:hover {
-  background: #233a47;
+  background: #ff485f;
 }
 
 /* Accordion */
@@ -97,7 +97,7 @@
 }
 
 .accordion-header {
-  background: #2A4759;
+  background: #ff485f;
   color: #fff;
   padding: 1rem 1.5rem;
   cursor: pointer;
@@ -114,7 +114,7 @@
 }
 
 .accordion-header:hover {
-  background: #233a47;
+  background: #ff48bb;
 }
 
 .accordion-arrow {
@@ -151,7 +151,7 @@
 }
 
 .card-grid .card {
-  background: #f8fafc;
+  background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   padding: 1rem;
@@ -160,7 +160,7 @@
 }
 
 .card-grid .card:hover {
-  box-shadow: 0 6px 18px rgba(42,71,89,0.13);
+  box-shadow: 0 6px 18px rgba(255, 72, 187, 0.13);
   transform: translateY(-4px) scale(1.03);
 }
 
@@ -171,7 +171,7 @@
 }
 
 .card-grid .card h4 {
-  color: #2A4759;
+  color: #ff48bb;
   font-size: 1rem;
   margin: 0.5rem 0 0 0;
 }
@@ -185,21 +185,21 @@
 
 .sent-offers, .received-offers {
   flex: 1 1 250px;
-  background: #f8fafc;
+  background: #fff;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .sent-offers h3, .received-offers h3 {
-  color: #2A4759;
+  color: #ff48bb;
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
 /* Chat */
 .chat-container {
-  background: #f8fafc;
+  background: #fff;
   border-radius: 8px;
   padding: 1rem;
   min-height: 120px;
@@ -212,7 +212,7 @@
 }
 
 #market h2 {
-  color: #2A4759;
+  color: #ff48bb;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
@@ -220,7 +220,7 @@
 #market input[type="text"] {
   width: 100%;
   padding: 0.7rem;
-  border: 1px solid #2A4759;
+  border: 1px solid #ff48bb;
   border-radius: 5px;
   margin-bottom: 1rem;
   font-size: 1rem;
@@ -245,12 +245,12 @@
 
 /* Color Palette */
 :root {
-  --primary: #2A4759;
-  --primary-dark: #233a47;
-  --background: #DDDDDD;
+  --primary: #ff485f;
+  --primary-dark: #ff48bb;
+  --background: #fff0f6;
   --white: #fff;
   --text: #333;
-  --accent: #f2f6fa;
+  --accent: #ffd1de;
   --muted: #bbb;
 }
 
@@ -284,6 +284,7 @@ body {
 .footer-section h4 {
   margin-bottom: 10px;
   font-size: 16px;
+  color: var(--white);
 }
 
 .footer-section ul {
