@@ -14,4 +14,9 @@ public class WebController {
     public String sign() {
         return "sign";
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
 }
