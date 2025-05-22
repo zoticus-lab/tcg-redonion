@@ -1,0 +1,12 @@
+C:\redonion\src\main\java\com\redonion\tcg\config\SecurityConfig.java
+C:\redonion\src\main\java\com\redonion\tcg\config\WebConfig.java
+C:\redonion\src\main\java\com\redonion\tcg\controller\AuthController.java
+C:\redonion\src\main\java\com\redonion\tcg\controller\CardController.java
+C:\redonion\src\main\java\com\redonion\tcg\controller\ErrorController.java
+C:\redonion\src\main\java\com\redonion\tcg\controller\WebController.java
+C:\redonion\src\main\java\com\redonion\tcg\model\Card.java
+C:\redonion\src\main\java\com\redonion\tcg\model\User.java
+C:\redonion\src\main\java\com\redonion\tcg\repository\CardRepository.java
+C:\redonion\src\main\java\com\redonion\tcg\repository\UserRepository.java
+C:\redonion\src\main\java\com\redonion\tcg\service\CustomUserDetailsService.java
+C:\redonion\src\main\java\com\redonion\tcg\TcgApplication.java

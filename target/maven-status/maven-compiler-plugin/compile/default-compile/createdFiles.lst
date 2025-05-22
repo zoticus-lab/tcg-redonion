@@ -1,0 +1,13 @@
+com\redonion\tcg\model\Card.class
+com\redonion\tcg\TcgApplication.class
+com\redonion\tcg\repository\CardRepository.class
+com\redonion\tcg\service\CustomUserDetailsService.class
+com\redonion\tcg\controller\WebController.class
+com\redonion\tcg\model\User.class
+com\redonion\tcg\repository\UserRepository.class
+com\redonion\tcg\controller\AuthController.class
+com\redonion\tcg\controller\CardController.class
+com\redonion\tcg\controller\ErrorController.class
+com\redonion\tcg\config\SecurityConfig$CustomLoginSuccessHandler.class
+com\redonion\tcg\config\WebConfig.class
+com\redonion\tcg\config\SecurityConfig.class
