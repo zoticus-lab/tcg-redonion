@@ -24,7 +24,7 @@ public class Card {
     private int stok;
     private int id_kategori;
     private String gambar;
-    private int id_user;
+    private int idUser;
 
     // Getter dan Setter semua field
 
@@ -101,11 +101,11 @@ public class Card {
     }
 
     public int getId_user() {
-        return id_user;
+        return idUser;
     }
 
     public void setId_user(int id_user) {
-        this.id_user = id_user;
+        this.idUser = id_user;
     }
     public String getGambar_url() {
         return gambar_url;
