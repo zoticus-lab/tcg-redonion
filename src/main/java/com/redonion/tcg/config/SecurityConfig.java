@@ -40,7 +40,8 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/static/**", "/css/**", "/*.css", "/*.js", "/*.png",
                                 "/*.jpg", "/*.jpeg", "/*.webp", "/textures/**",
-                                "/texture/**", "/images/**", "/logo*", "/*.ico")
+                                "/texture/**", "/images/**", "/logo*", "/*.ico",
+                                "/webjars/**", "/fonts/**")
                         .permitAll()
                         .requestMatchers(
                                 "/", "/index", "/sign", "/login", "/register", "/error",
