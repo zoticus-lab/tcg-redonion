@@ -34,16 +34,33 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         System.out.println("DEBUG: SecurityFilterChain initialized");
         http
+                .csrf(csrf -> csrf.disable())
                 .userDetailsService(userDetailsService)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login").hasRole("ADMIN")
-                        .anyRequest().permitAll())
+                        .requestMatchers(
+                                "/static/**", "/css/**", "/*.css", "/*.js", "/*.png",
+                                "/*.jpg", "/*.jpeg", "/*.webp", "/textures/**",
+                                "/texture/**", "/images/**", "/logo*", "/*.ico")
+                        .permitAll()
+                        .requestMatchers(
+                                "/", "/index", "/sign", "/login", "/register", "/error",
+                                "/pokemon", "/yugioh", "/mtg")
+                        .permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/sign")
-                        .loginProcessingUrl("/admin")
+                        .loginProcessingUrl("/login")
                         .successHandler(new CustomLoginSuccessHandler())
+                        .failureUrl("/sign?error=true")
                         .permitAll())
-                .logout(logout -> logout.permitAll());
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll())
+                .exceptionHandling(ex -> ex
+                        .accessDeniedPage("/error"));
 
         return http.build();
     }

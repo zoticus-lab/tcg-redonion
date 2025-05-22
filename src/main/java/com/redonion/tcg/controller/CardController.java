@@ -1,4 +1,4 @@
-package com.redonion.tcg;
+package com.redonion.tcg.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;

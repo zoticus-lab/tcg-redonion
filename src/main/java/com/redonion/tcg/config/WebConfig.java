@@ -1,4 +1,4 @@
-package com.redonion.tcg;
+package com.redonion.tcg.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -9,7 +9,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/uploads/images/**")
-                .addResourceLocations("file:uploads/images/");
+        System.out.println("DEBUG: Configuring resource handlers");
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
+        System.out.println("DEBUG: Resource handlers configured");
     }
 }
