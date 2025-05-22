@@ -5,12 +5,20 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+<<<<<<< HEAD:target/classes/static/sign.css
+=======
+
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD:target/classes/static/sign.css
   background: #fff0f6;
+=======
+  background: #DDDDDD;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   padding: 50px 30px;
 }
 
@@ -29,7 +37,11 @@ body {
   width: 100%;
   background: #fff;
   padding: 40px 30px;
+<<<<<<< HEAD:target/classes/static/sign.css
   box-shadow: 0 5px 10px rgba(255, 72, 187, 0.15);
+=======
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   perspective: 2700px;
   min-height: 500px;
   overflow: visible;
@@ -72,6 +84,10 @@ body {
   object-fit: cover;
   z-index: 10;
 }
+<<<<<<< HEAD:target/classes/static/sign.css
+=======
+
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 .container .forms {
   height: 100%;
   width: 100%;
@@ -89,11 +105,19 @@ body {
 .form-content .signup-form {
   width: calc(100% / 2 - 25px);
 }
+<<<<<<< HEAD:target/classes/static/sign.css
+=======
+
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 .forms .form-content .title {
   position: relative;
   font-size: 24px;
   font-weight: 500;
+<<<<<<< HEAD:target/classes/static/sign.css
   color: #ff485f;
+=======
+  color: #333;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   margin-bottom: 20px;
 }
 
@@ -104,7 +128,11 @@ body {
   bottom: 0;
   height: 3px;
   width: 25px;
+<<<<<<< HEAD:target/classes/static/sign.css
   background: #ff48bb;
+=======
+  background: #2A4759;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 }
 
 .forms .form-content .input-boxes {
@@ -119,6 +147,10 @@ body {
   margin: 10px 0;
   position: relative;
 }
+<<<<<<< HEAD:target/classes/static/sign.css
+=======
+
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 .form-content .input-box input {
   height: 100%;
   width: 100%;
@@ -127,7 +159,11 @@ body {
   padding: 0 35px;
   font-size: 16px;
   font-weight: 500;
+<<<<<<< HEAD:target/classes/static/sign.css
   border-bottom: 2px solid #ff48bb;
+=======
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   transition: all 0.3s ease;
   background: transparent;
   color: #333;
@@ -140,14 +176,24 @@ body {
 .form-content .input-box i {
   position: absolute;
   left: 10px;
+<<<<<<< HEAD:target/classes/static/sign.css
   color: #ff48bb;
+=======
+  color: #2A4759;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   font-size: 17px;
 }
 
 .form-content .input-box input:focus,
 .form-content .input-box input:valid {
+<<<<<<< HEAD:target/classes/static/sign.css
   border-color: #ff485f;
 }
+=======
+  border-color: #2A4759;
+}
+
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 .forms .form-content .text {
   font-size: 14px;
   font-weight: 500;
@@ -156,12 +202,19 @@ body {
 
 .forms .form-content .text a {
   text-decoration: none;
+<<<<<<< HEAD:target/classes/static/sign.css
   color: #ff48bb;
+=======
+  color: #2A4759;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 }
 
 .forms .form-content .text a:hover {
   text-decoration: underline;
+<<<<<<< HEAD:target/classes/static/sign.css
   color: #ff485f;
+=======
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 }
 
 .forms .form-content .button {
@@ -171,7 +224,11 @@ body {
 
 .forms .form-content .button input {
   color: #fff;
+<<<<<<< HEAD:target/classes/static/sign.css
   background: #ff48bb;
+=======
+  background: #2A4759;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   border-radius: 6px;
   padding: 0 15px;
   height: 100%;
@@ -181,17 +238,28 @@ body {
 }
 
 .forms .form-content .button input:hover {
+<<<<<<< HEAD:target/classes/static/sign.css
   background: #ff485f;
 }
 
 .forms .form-content label {
   color: #ff48bb;
+=======
+  background: #1e3540;
+}
+
+.forms .form-content label {
+  color: #2A4759;
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
   cursor: pointer;
 }
 
 .forms .form-content label:hover {
   text-decoration: underline;
+<<<<<<< HEAD:target/classes/static/sign.css
   color: #ff485f;
+=======
+>>>>>>> 4f3ce21784a5d68e2d780a44e9b6bbde67b50fa5:src/main/resources/static/sign.css
 }
 
 .forms .form-content .login-text,
