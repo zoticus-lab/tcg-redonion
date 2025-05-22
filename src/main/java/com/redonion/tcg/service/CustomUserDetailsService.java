@@ -18,11 +18,16 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByNama(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
         System.out.println("DEBUG: Login attempt for username: " + username);
         System.out.println("DEBUG: Found user: " + user.getNama() + ", role: " + user.getRole());
+
+        // Convert enum to Spring Security role format
+        String roleWithPrefix = "ROLE_" + user.getRole().name();
+
         return new org.springframework.security.core.userdetails.User(
                 user.getNama(),
                 user.getPassword(),
-                Collections.singletonList(new SimpleGrantedAuthority(user.getRole())));
+                Collections.singletonList(new SimpleGrantedAuthority(roleWithPrefix)));
     }
 }

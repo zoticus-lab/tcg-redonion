@@ -12,7 +12,14 @@ public class User {
     private String nama;
     private String email;
     private String password;
-    private String role;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
+    public enum UserRole {
+        USER,
+        ADMIN
+    }
 
     // Getter dan Setter
     public Integer getId_user() {
@@ -47,11 +54,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 }

@@ -1,6 +1,7 @@
 package com.redonion.tcg.controller;
 
 import com.redonion.tcg.model.User;
+import com.redonion.tcg.model.User.UserRole;
 import com.redonion.tcg.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,7 +36,7 @@ public class AuthController {
         user.setNama(username);
         user.setEmail(name + "@example.com"); // You might want to add email field to the form later
         user.setPassword(passwordEncoder.encode(password));
-        user.setRole("ROLE_USER"); // Default role for new users
+        user.setRole(UserRole.USER); // Setting default role using enum
 
         userRepository.save(user);
         redirectAttributes.addFlashAttribute("success", "Registration successful! Please login.");
