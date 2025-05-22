@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.redonion.tcg.model.Card;
 import com.redonion.tcg.repository.CardRepository;
+
 @Controller
 @RequestMapping("/cards")
 public class CardController {
@@ -34,8 +35,7 @@ public class CardController {
             @RequestParam int stok,
             @RequestParam int id_kategori,
             @RequestParam("gambar") MultipartFile gambar,
-            @RequestParam int id_user
-    ) {
+            @RequestParam int id_user) {
         try {
             if (gambar == null || gambar.isEmpty()) {
                 // Bisa tangani kalau gambar kosong, misal return error atau set gambar default
@@ -66,36 +66,33 @@ public class CardController {
 
             cardRepository.save(card);
 
-            return "redirect:/";  // sesuaikan redirect-nya
+            return "redirect:/"; // sesuaikan redirect-nya
         } catch (IOException e) {
             return "error";
         }
     }
 
-@GetMapping("/form")
-public String showForm() {
-    return "tambah-kartu";
-}
+    @GetMapping("/form")
+    public String showForm() {
+        return "tambah-kartu";
+    }
 
+    @GetMapping("/pokemon")
+    public String showPokemonCards(Model model) {
+        model.addAttribute("cards", cardRepository.findAll());
+        return "pokemon";
+    }
 
-@GetMapping("/pokemon")
-public String showPokemonCards(Model model) {
-    model.addAttribute("cards", cardRepository.findAll());
-    return "pokemon";
-}
+    @GetMapping("/yugioh")
+    public String showYugiohCards(Model model) {
+        model.addAttribute("cards", cardRepository.findAll());
+        return "yugioh";
+    }
 
-@GetMapping("/yugioh")
-public String showYugiohCards(Model model) {
-    model.addAttribute("cards", cardRepository.findAll());
-    return "yugioh";
-}
-
-@GetMapping("/mtg")
-public String showMtgCards(Model model) {
-    model.addAttribute("cards", cardRepository.findAll());
-    return "mtg";
-}
-
+    @GetMapping("/mtg")
+    public String showMtgCards(Model model) {
+        model.addAttribute("cards", cardRepository.findAll());
+        return "mtg";
+    }
 
 }
-

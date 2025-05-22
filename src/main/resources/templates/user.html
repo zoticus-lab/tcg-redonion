@@ -1,85 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tambah Kartu - Admin Panel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="user.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pengguna - RO-TCG</title>
+  <link rel="stylesheet" href="user.css">
 </head>
 <body>
-
   <header class="navbar">
     <div class="container">
-      <h1 class="logo">RO-TCG Admin</h1>
+      <h1 class="logo">RO-TCG</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/cards/form">Tambah Kartu</a></li>
+          <li><a href="user.html">Beranda</a></li>
+          <li><a href="#inventory">Inventaris</a></li>
+          <li><a href="#market">Pasar</a></li>
+          <li><a href="#offers">Penawaran</a></li>
+          <li><a href="#chat">Obrolan</a></li>
         </ul>
       </nav>
+      <div class="user-info">
+        <span class="currency">💰 5.000</span>
+        <span class="username">Vortex-aint</span>
+        <img src="/assets/profile.jpg" alt="Profil" class="profile-img">
+        <button id="settingBtn" class="cta-button" title="Pengaturan">⚙️</button>
+      </div>
     </div>
   </header>
 
-  <section class="form-section">
-    <div class="container">
-      <h2>Tambah Kartu Baru</h2>
-      <form action="/cards/add" method="POST" enctype="multipart/form-data" class="form-card">
-
-        <div class="form-group">
-          <label for="nama">Nama Kartu:</label>
-          <input type="text" id="nama" name="nama" required />
-        </div>
-
-        <div class="form-group">
-          <label for="harga">Harga:</label>
-          <input type="number" id="harga" name="harga" step="0.01" required />
-        </div>
-
-        <div class="form-group">
-          <label for="deskripsi">Deskripsi:</label>
-          <textarea id="deskripsi" name="deskripsi" rows="3"></textarea>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="rarity">Rarity:</label>
-            <input type="text" id="rarity" name="rarity" />
-          </div>
-
-          <div class="form-group">
-            <label for="kondisi">Kondisi:</label>
-            <input type="text" id="kondisi" name="kondisi" />
-          </div>
-
-          <div class="form-group">
-            <label for="stok">Stok:</label>
-            <input type="number" id="stok" name="stok" min="0" required />
+  <main class="user-page container">
+    <div id="accordionContainer">
+      <!-- Inventaris -->
+      <div class="accordion-section" id="inventory-section">
+        <button class="accordion-header" type="button">
+          Inventaris Saya <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content">
+          <div class="card-grid">
+            <!-- Kartu pengguna ditampilkan di sini -->
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="id_kategori">Kategori:</label>
-          <select id="id_kategori" name="id_kategori" required>
-            <option value="1">Pokémon</option>
-            <option value="2">Yu-Gi-Oh!</option>
-            <option value="3">Magic: The Gathering</option>
-          </select>
+      </div>
+      <!-- Market -->
+      <section id="market">
+        <h2>Pasar Kartu</h2>
+        <input type="text" placeholder="Cari kartu...">
+        <div class="market-grid">
+          <!-- Daftar kartu untuk dijual -->
         </div>
-
-        <div class="form-group">
-          <label for="gambar">Upload Gambar:</label>
-          <input type="file" id="gambar" name="gambar" accept="image/*" />
+      </section>
+      <!-- Penawaran -->
+      <div class="accordion-section" id="offers-section">
+        <button class="accordion-header" type="button">
+          Penawaran <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content">
+          <div class="offers-container">
+            <div class="sent-offers">
+              <h3>Penawaran Dikirim</h3>
+              <!-- Penawaran yang dikirim -->
+            </div>
+            <div class="received-offers">
+              <h3>Penawaran Diterima</h3>
+              <!-- Penawaran yang diterima -->
+            </div>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="id_user">ID Admin:</label>
-          <input type="number" id="id_user" name="id_user" required />
+      </div>
+      <!-- Chat -->
+      <div class="accordion-section" id="chat-section">
+        <button class="accordion-header" type="button">
+          Obrolan & Negosiasi <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content">
+          <div class="chat-container">
+            <!-- Komponen obrolan -->
+          </div>
         </div>
-
-        <button type="submit" class="cta-button">Tambah Kartu</button>
-      </form>
+      </div>
     </div>
-  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 RO-TCG. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+  <script>
+    // Accordion logic
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const section = this.parentElement;
+        section.classList.toggle('active');
+      });
+    });
+
+    // Setting button: slide down/up all accordions
+    document.getElementById('settingBtn').addEventListener('click', function() {
+      document.getElementById('inventory-section').classList.toggle('active');
+      document.getElementById('offers-section').classList.toggle('active');
+      document.getElementById('chat-section').classList.toggle('active');
+    });
+  </script>
 
 <footer class="footer">
   <div class="footer-sections">
@@ -171,5 +193,6 @@
     </p>
   </div>
 </footer>
+
 </body>
 </html>
