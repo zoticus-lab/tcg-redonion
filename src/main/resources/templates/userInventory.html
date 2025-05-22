@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCG Inventory</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; }
+
+    .filters input, .filters select {
+      padding: 6px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .inventory {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      cursor: grab;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .card.dragging {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🃏 TCG Inventory System</h1>
+
+<div class="filters">
+  <input type="text" id="nameFilter" placeholder="Filter by name" />
+  <select id="typeFilter">
+    <option value="">All Types</option>
+    <option value="Monster">Monster</option>
+    <option value="Spell">Spell</option>
+    <option value="Trap">Trap</option>
+  </select>
+  <select id="conditionFilter">
+    <option value="">All Conditions</option>
+    <option value="Mint">Mint</option>
+    <option value="Near Mint">Near Mint</option>
+    <option value="Used">Used</option>
+  </select>
+</div>
+
+<div class="inventory" id="inventory">
+  <!-- Cards will be added here dynamically -->
+</div>
+
+<script>
+  const cards = [
+    { id: 1, name: "Blue-Eyes White Dragon", type: "Monster", condition: "Mint", tag: "Rare", image_url: "https://i.imgur.com/O7PMWy6.png" },
+    { id: 2, name: "Dark Magician", type: "Monster", condition: "Used", tag: "Classic", image_url: "https://i.imgur.com/PHmQePe.png" },
+    { id: 3, name: "Mirror Force", type: "Trap", condition: "Near Mint", tag: "Defensive", image_url: "https://i.imgur.com/TuN1kWp.png" },
+    { id: 4, name: "Monster Reborn", type: "Spell", condition: "Used", tag: "Revive", image_url: "https://i.imgur.com/5R8hbt1.png" },
+  ];
+
+  const inventory = document.getElementById('inventory');
+
+  function renderCards() {
+    const nameVal = document.getElementById('nameFilter').value.toLowerCase();
+    const typeVal = document.getElementById('typeFilter').value;
+    const conditionVal = document.getElementById('conditionFilter').value;
+
+    inventory.innerHTML = '';
+    cards.filter(card => {
+      return (!nameVal || card.name.toLowerCase().includes(nameVal)) &&
+             (!typeVal || card.type === typeVal) &&
+             (!conditionVal || card.condition === conditionVal);
+    }).forEach(card => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.setAttribute('draggable', true);
+      div.dataset.id = card.id;
+      div.innerHTML = `
+        <img src="${card.image_url}" alt="${card.name}" />
+        <h4>${card.name}</h4>
+        <small>${card.type} - ${card.condition}</small><br/>
+        <span style="color: gray;">Tag: ${card.tag}</span>
+      `;
+      addDragListeners(div);
+      inventory.appendChild(div);
+    });
+  }
+
+  function addDragListeners(el) {
+    el.addEventListener('dragstart', () => el.classList.add('dragging'));
+    el.addEventListener('dragend', () => el.classList.remove('dragging'));
+  }
+
+  // Reordering cards via drag and drop
+  inventory.addEventListener('dragover', e => {
+    e.preventDefault();
+    const dragging = document.querySelector('.dragging');
+    const afterElement = getDragAfterElement(inventory, e.clientY);
+    if (afterElement == null) {
+      inventory.appendChild(dragging);
+    } else {
+      inventory.insertBefore(dragging, afterElement);
+    }
+  });
+
+  function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.card:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) return { offset, element: child };
+      return closest;
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+  }
+
+  // Filtering events
+  document.querySelectorAll('.filters input, .filters select').forEach(input => {
+    input.addEventListener('input', renderCards);
+  });
+
+  renderCards();
+</script>
+
+</body>
+</html>
